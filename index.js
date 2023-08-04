@@ -6,7 +6,9 @@ const { notFoundHandler, errorHandler } = require('./middlewares/common/errorHan
 const userRouter = require('./routers/userRouter');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
+}));
 dotenv.config();
 
 // database connection
